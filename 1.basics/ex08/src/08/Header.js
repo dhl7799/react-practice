@@ -1,7 +1,9 @@
 import React from 'react';
 
 function Header() {
-    return React.createElement('h2', null, '04');
+    return (
+        <h2>08</h2>
+    );
 }
 
 export default Header;

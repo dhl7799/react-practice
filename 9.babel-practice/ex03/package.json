@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0"
+  },
+  "name": "ex03",
+  "description": "npm init -y\r npm i -D @babel/core\r npm i -D @babel/core @babel/cli\r npx babel src -d dist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@babel/plugin-transform-block-scoping": "^7.21.0",
+    "@babel/plugin-transform-for-of": "^7.21.0",
+    "@babel/plugin-transform-parameters": "^7.20.7",
+    "D": "^1.0.0"
+  }
+}

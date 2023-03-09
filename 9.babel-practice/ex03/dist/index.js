@@ -14,6 +14,7 @@ function print({
 }) {
   console.log(`${no}:${name}:${email}`);
 }
-for (let user of user) {
+for (var _i = 0, _users = users; _i < _users.length; _i++) {
+  let user = _users[_i];
   print(user);
 }
