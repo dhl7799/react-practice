@@ -1,10 +1,11 @@
 import React from 'react';
-
+import Emaillist from './Emaillist';
+import styles from './assets/css/App.css'
 function App(props) {
 
     return (
-        <div id='App'>
-            <h1>Emallist</h1>
+        <div id={styles.App}>
+            <Emaillist />
         </div>
     );
 }
