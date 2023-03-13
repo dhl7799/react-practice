@@ -15,18 +15,18 @@ module.exports = function(env){
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    configFile:path.resolve('config/babel.config.json')
+                    configFile: path.resolve('config/babel.config.json')
                 }
             },{
                 test: /\.(c|sa|sc)ss$/i,
                 use: [
-                    'style-loader', 
+                    'style-loader',
                     {
-                        loader:'css-loader',
+                        loader: 'css-loader',
                         options: {
                             modules: true
                         }
-                    }, 
+                    },
                     'sass-loader']
             }, {
                 test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,

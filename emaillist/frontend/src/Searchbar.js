@@ -1,11 +1,10 @@
-import React from 'react';
-import styles from './assets/css/Searchbar.css'
-const Searchbar = () => {
-    return (
-        <div className ={styles.Searchbar}>
-                <input type='text' placeholder='찾기'/>
-        </div>
-    );
-};
+import React from 'react'
+import styles from './assets/scss/SearchBar.scss';
 
-export default Searchbar;
+export default function SearchBar({keyword, callback}) {
+  return (
+    <div className={styles.Searchbar}>
+        <input type='text' placeholder='찾기' value={keyword} onChange={ (e) => callback(e.target.value) } />
+    </div>
+  )
+}
