@@ -2,6 +2,14 @@ import React, {useState, useEffect} from 'react';
 import './assets/scss/App.scss'
 import Clock from './Clock';
 
+/**
+ * 1. useState로 currentTime, setCurrentTime 선언
+ * 2. getCurrentTime 함수 생성해서 useState 초기화
+ * 3. 함수 return으로 본문 생성
+ * 4. useEffect, setInterval이용해서 1초마다 setCurrentTime(getCurrentTime)호출
+ * 
+ */
+
 export default function App() {
     const getCurrentTime = () =>{
         const date = new Date();
@@ -17,26 +25,29 @@ export default function App() {
         };
     }
     const [currentTime,setCurrentTime] = useState(getCurrentTime);
-    const [ticks, setTicks] = useState(0);
-
+    //const [ticks, setTicks] = useState(0);
+    //console.log(ticks);
+    /**
+     * 마운트, 언마운트등 일정시점에 작동하는 방법으로 useEffect씀
+     * 
+     */
     useEffect(() => {
         setInterval(function () {
             setCurrentTime(getCurrentTime());
-            setTicks(ticks+1);
+            //setTicks(e=>e+1);
+            
         }, 1000);
+        
     }, []);
 
     return (
         <div>
-            <span>{ticks}</span>
             {
-                ticks % 10 === 0 ?
-                null :
                 <Clock
-                    message={'ex05: useEffect Hook example'}
-                    hours={currentTime.hours}
-                    minutes={currentTime.minutes}
-                    seconds={currentTime.seconds}/>
+                message={'ex05: useEffect Hook example'}
+                hours={currentTime.hours}
+                minutes={currentTime.minutes}
+                seconds={currentTime.seconds}/>
             }
         </div>
     );
