@@ -2,20 +2,21 @@ import React from 'react';
 import styles from './assets/css/CardList.css';
 import Card from './Card';
 
-const CardList = ({title, cards}) => {
+const CardList = ({title, cards, callback}) => {
     return (
         <div className={styles.CardList}>
             <h1>{title}</h1>
             {
-                cards.map(card => <Card 
+                cards.map(card => <Card
                                     key={card.no}
-                                    no = {card.no}
-                                    title = {card.title}
-                                    description = {card.description}
-                                    tasks={card.tasks}/>)
+                                    no={card.no}
+                                    title={card.title}
+                                    description={card.description}
+                                    tasks={card.tasks}
+                                    callback={callback}/>)
             }
         </div>
     );
 };
 
-export default CardList;<h1>To Do</h1>
+export default CardList;
