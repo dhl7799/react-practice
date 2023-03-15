@@ -16,21 +16,12 @@ const App = () => {
   const [emails, setEmails] = useState(data);
 
   const searchEmails = async (keyword) => {
-    const o = {
-      keyword: keyword
-    }
     try{
       const response = await fetch('/api/search/?keyword='+keyword,{
-          // method: 'get',
-          // headers: {
-          //     'Accept': 'application/json'
-          // }
-          method: 'post',
+          method: 'get',
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(o)
+          'Accept': 'application/json'
+          }
       });
       if(!response.ok){
         throw new Error(`${response.status} ${response.statusText}`);
@@ -115,13 +106,12 @@ const addEmail = async (firstName, lastName, email) => {
 
 const deleteEmail = async(no) => {
   try{
-    const response = await fetch('/api/delete',{
-        method: 'post',
+    const response = await fetch('/api/delete/?no='+no,{
+        method: 'get',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(no)
+        }
     });
     if(!response.ok){
         throw new Error(`${response.status} ${response.statusText}`);
