@@ -2,6 +2,11 @@ import React from 'react';
 import styles from './assets/scss/App.scss';
 import styled from 'styled-components';
 import Content from './Content';
+
+/**
+ * JavaScript 파일마다 고유한 CSS 네임 스페이스를 부여해주기 때문에, 각 React 컴포넌트에 완전히 격리된 스타일을 적용할 수 있게 됩니다.
+ */
+
 const StyledH1 = styled.h1`
     width: 300px;
     text-align: center;
