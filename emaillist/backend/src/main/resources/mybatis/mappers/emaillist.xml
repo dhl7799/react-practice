@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emaillist">
+	<select id="getList" resultType="emaillistvo">
+		<![CDATA[	
+    		  select no, firstName, lastName, email
+      		    from emaillist
+ 		    order by no desc
+		]]>
+	</select>
+	
+	<select id="search" resultType="emaillistvo" parameterType="string">
+		<![CDATA[	
+    		  select no, firstName, lastName, email
+      		    from emaillist
+      		    where firstName like '%${keyword }%' or lastName like '%${keyword }%' or email like '%${keyword }%'
+ 		    order by no desc
+		]]>
+	</select>
+	
+	<insert id="insertEmail" parameterType="emaillistvo">
+		<![CDATA[
+		insert into emaillist values(null, #{firstName }, #{lastName}, #{email})
+		]]>
+	</insert>
+	
+	<delete id="deleteEmail" parameterType="long">
+		<![CDATA[
+		delete from emaillist where no = #{no }
+		]]>
+	</delete>
+</mapper>

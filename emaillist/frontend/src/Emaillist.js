@@ -9,7 +9,7 @@ export default function Emaillist({emails, callbackDeleteEmail}) {
         {
             emails
             .map(email => <Email
-                                    key={email.no}
+                                    key={email.email}
                                     no={email.no}
                                     firstName={email.firstName}
                                     lastName={email.lastName}

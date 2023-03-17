@@ -12,7 +12,7 @@ public class LandingController {
 	public String index() {
 		return "index";
 	}
-	
+	//favicon 막는거
 	@GetMapping("favicon.ico")
 	@ResponseBody
 	public void returnNoFavivon() {

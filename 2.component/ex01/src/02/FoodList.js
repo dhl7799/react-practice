@@ -1,6 +1,7 @@
 import React from 'react';
 import FoodListItem from './FoodListItem';
 
+//foods = App에서 받은 data
 function FoodList({foods}) {
     /*const foodItems = [];
 

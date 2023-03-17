@@ -17,6 +17,8 @@ import Clock from './Clock';
  * 
  * super(...arguments) 대신 props해도 작동
  * ...은 전개 연산자
+ * 
+ * props는 상위 컴포넌트에서 하위 컴포넌트로 데이터를 전달해주는 객체
  */
 export default class App extends Component {
     constructor(props) {

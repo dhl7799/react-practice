@@ -25,21 +25,32 @@ export default function App() {
         };
     }
     const [currentTime,setCurrentTime] = useState(getCurrentTime);
-    //const [ticks, setTicks] = useState(0);
+    const [ticks, setTicks] = useState(0);
     //console.log(ticks);
     /**
      * 마운트, 언마운트등 일정시점에 작동하는 방법으로 useEffect씀
      * 
      */
+    
     useEffect(() => {
-        setInterval(function () {
+        const interval = setInterval(function () {
             setCurrentTime(getCurrentTime());
             //setTicks(e=>e+1);
             
         }, 1000);
-        
+        return (() => {
+            clearInterval(interval)
+        });
     }, []);
-
+    
+    /*
+    useEffect(() => {
+        setTimeout(() =>{
+            setCurrentTime(getCurrentTime());
+            setTicks(ticks+1);
+        }, 1000);
+    }, [currentTime]);
+    */
     return (
         <div>
             {
