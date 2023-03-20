@@ -23,6 +23,8 @@
 		- Publish over SSH 플러그인 설치
 		- Publish over SSH 플러그인 ssh server 등록(springboot-publish-server, hostname 192.168.0.19, username root, remote directory /)
 		- 프로젝트의 빌드 후 조치(post-build action) send build artifacts over ssh 설정
+		  kanbanboard.jar : transfer
+		  launch.sh : transfer + execution
 =========================================================
 
 3. frontend	
