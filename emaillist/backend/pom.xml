@@ -46,10 +46,11 @@
 			<version>2.2.0</version>
 		</dependency>
 		
-		<!-- MariaDB JDBC Driver -->
+		<!-- postgre JDBC Driver -->
 		<dependency>
-		    <groupId>org.mariadb.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		
 		<!-- JSTL -->

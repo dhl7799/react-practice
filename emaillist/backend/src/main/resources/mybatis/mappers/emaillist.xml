@@ -20,8 +20,13 @@
 	
 	<insert id="insertEmail" parameterType="emaillistvo">
 		<![CDATA[
-		insert into emaillist values(null, #{firstName }, #{lastName}, #{email})
+		insert into emaillist values(default, #{firstName }, #{lastName}, #{email})
 		]]>
+		<selectKey keyProperty="no" resultType="long" order="AFTER">
+         <![CDATA[
+           select currval('emaillist_no_seq')
+           ]]>
+        </selectKey>
 	</insert>
 	
 	<delete id="deleteEmail" parameterType="long">

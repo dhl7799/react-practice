@@ -28,10 +28,10 @@ spring:
 
    #datasource
    datasource:
-      driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.0.19:3307/webdb?charset=utf8
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://192.168.0.19:5432/webdb?characterEncoding=utf8
       username: webdb
-      password: webdb
+      password: webdb   
       hikari:
          minimum-idle: 10
          maximum-pool-size: 20
