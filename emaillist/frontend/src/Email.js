@@ -7,7 +7,7 @@ export default function Email({no,firstName, lastName, email, callbackDeleteEmai
     <li className={styles.Email}>
       <h4>{`${lastName} ${firstName}`}</h4>
       <span>{email}</span>
-      <a href='' onClick={ () =>{
+      <a href='#' onClick={ () =>{
         callbackDeleteEmail(no);
       }
     }></a>
@@ -15,8 +15,9 @@ export default function Email({no,firstName, lastName, email, callbackDeleteEmai
   );
 }
 
+/*
 Email.propType = {
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,  
   email: PropTypes.string.isRequired
-}
+}*/

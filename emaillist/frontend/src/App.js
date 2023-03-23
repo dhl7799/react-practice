@@ -105,12 +105,12 @@ const addEmail = async (firstName, lastName, email) => {
 }
 
 const deleteEmail = async(no) => {
+    console.log("no: " + no);
   try{
-    const response = await fetch('/api/delete/?no='+no,{
-        method: 'get',
+    const response = await fetch(`/api/delete/${no}`,{
+        method: 'delete',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Accept': 'application/json'
         }
     });
     if(!response.ok){
@@ -122,7 +122,7 @@ const deleteEmail = async(no) => {
         throw new Error(`${json.result} ${json.message}`);
     }
 
-    setEmails([emails]);
+    setEmails(emails.filter((email) => email.no !== no));
 } catch(err){
     console.log(err.message);
 }
